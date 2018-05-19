@@ -1,0 +1,19 @@
+river=imread('Fig0110.TIF');
+rivermax=255;
+my2colormap=zeros(256,3);
+for i=1:40
+    my2colormap(i,1)=1;
+    my2colormap(i,2)=1;
+    my2colormap(i,3)=0;
+end
+for i=41:256
+    my2colormap(i,1)=(i-1)/255;
+    my2colormap(i,2)=(i-1)/255;
+    my2colormap(i,3)=(i-1)/255;
+end
+figure(2)
+imshow(river);
+colormap(my1colormap);
+colorbar;
+title('伪彩处理后的图像')
+title('原图')
